@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="../static/java/main.jsx" defer></script>
+</head>
+<body>
+    <nav>
+        <li>
+            <a href="/shop">Shop</a>
+            <a href="/">Clicker</a>
+        </li>
+    </nav>
+    <div id="scorebar">
+        <p id="score"></p>    
+    </div>
+    {% block content %}
+    
+    {% endblock %}
+</body>
+</html>
