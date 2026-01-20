@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="../static/css/styles.css">
-    <script src="../static/java/main.jsx" defer></script>
+    <script src="../static/java/main.js" defer></script>
+    <script {% block script %}{% endblock %}  defer></script>
 </head>
 <body>
     <nav>
         <li>
-            <a href="/shop">Shop</a>
-            <a href="/">Clicker</a>
+            <a id="shop">Shop</a>
+            <a id="clicker">Clicker</a>
         </li>
     </nav>
     <div id="scorebar">
-        <p id="score"></p>    
+        <p id="score"></p>
     </div>
     {% block content %}
     
