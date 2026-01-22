@@ -41,13 +41,12 @@ function grandpa_button() { //defines a function which makes the paragraph eleme
     }
 }
 
-//defines functions that update the amount of 
+//defines functions that update the amount of cookie upgrades you have and the price of future cookie upgrades in shop.html
 function updateCookieUpgradePrice () {
     if (cookieUpgradePrice) cookieUpgradePrice.textContent = `Price: ${cookieUpgradeBuyPrice} cookies`;
 }
-
 function updateCookieUpgrades () {
-    if (cookieUpgrades) cookieUpgrades.textContent = `You have ${cookieUpgradeAmount} cookie upgrades`
+    if (cookieUpgrades) cookieUpgrades.textContent = `You have ${cookieUpgradeAmount} cookie upgrades`;
 }
 
 function cookie_button() {
@@ -60,8 +59,9 @@ function cookie_button() {
     }
 }
 
-grandpaButton.addEventListener('click', grandpa_button); //adds an eventListener that activates every time the Buy button is clicked
-cookieButton.addEventListener('click', cookie_button)
+//adds an eventListener that activates every time the Buy button is clicked
+grandpaButton.addEventListener('click', grandpa_button);
+cookieButton.addEventListener('click', cookie_button);
 
 updateGrandpaPrice();
 updateGrandpas();
