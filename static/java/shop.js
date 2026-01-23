@@ -7,7 +7,7 @@ const cookieUpgrades = document.getElementById('cookieUpgrades');
 const cookieButton = document.getElementById('cookieUpgradeButton');
 
 // declares the values of the cookie upgrade price and grandpa price which are gonna get changed later.
-let cookieUpgradeBuyPrice = cookieUpgradeAmount + 1;
+let cookieUpgradeBuyPrice = cookieUpgradeAmount * 10 + 10;
 let grandpaBuyPrice = grandpaAmount*5 + 5;
 
 // defines a function that refreshes the shop site once and updates the url parameters
