@@ -3,7 +3,7 @@ const cookieImg = document.getElementById('cookie');
 
 //defines function that increases the count every time the cookie is clicked and updates the score on the screen
 function incrementCounter() {
-    count += cookieUpgradeAmount + 1;
+    count += (cookieUpgradeAmount + 1) * cookieUpgradeMultiplier * cookieMultiplier;
     updateScore();
     console.log('Cookie clicked')
 }

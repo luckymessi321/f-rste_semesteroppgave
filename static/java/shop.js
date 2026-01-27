@@ -2,19 +2,21 @@
 const grandpa = document.getElementById('grandpas'); 
 const grandpaPrice = document.getElementById('grandpaPrice'); 
 const grandpaButton = document.getElementById('grandpaButton');
+const grandpaMaxDisplayButton = document.getElementById('grandpaMaxButton')
 const cookieUpgradePrice = document.getElementById('cookieUpgradePrice');
 const cookieUpgrades = document.getElementById('cookieUpgrades');
 const cookieButton = document.getElementById('cookieUpgradeButton');
+const cookieMaxDisplayButton = document.getElementById('cookieMaxButton')
 
 // declares the values of the cookie upgrade price and grandpa price which are gonna get changed later.
 let cookieUpgradeBuyPrice = cookieUpgradeAmount * 10 + 10;
-let grandpaBuyPrice = grandpaAmount*5 + 5;
+let grandpaBuyPrice = grandpaAmount * 5 + 5;
 
 // defines a function that refreshes the shop site once and updates the url parameters
 function updateShopSite() {
     let timesExecuted = 0
     while (true) {
-        window.location.href = '/shop?count=' + count + '&grandpas=' + grandpaAmount + '&cookieUpgrades=' + cookieUpgradeAmount;
+        window.location.href = '/shop?count=' + count + '&grandpas=' + grandpaAmount + '&cookieUpgrades=' + cookieUpgradeAmount + '&rebirthAmount=' + rebirthAmount;
         console.log('site updated');
         timesExecuted ++;
         if (timesExecuted >= timesExecuted) {
@@ -24,7 +26,7 @@ function updateShopSite() {
 }
 
 //defines functions that update the amount of grandpas you have and the price of future grandpas in shop.html
-function updateGrandpaPrice () {
+function updateGrandpaPrice() {
     if (grandpaPrice) grandpaPrice.textContent = `Price: ${grandpaBuyPrice} cookies`;
 }
 function updateGrandpas() {
@@ -41,11 +43,25 @@ function grandpa_button() { //defines a function which makes the paragraph eleme
     }
 }
 
+function grandpaMaxButton() {
+    while (true) {
+        if (count >= grandpaBuyPrice) { //makes sure that grandpas cannot be bought without having the cookies for it
+            count -= grandpaBuyPrice; // subtracts your current amount of cookies by the price of a grandpa
+            grandpaAmount ++; // increases the amount of owned grandpas by 1
+        } else {
+            updateGrandpaPrice(); 
+            updateGrandpas();
+            updateShopSite();
+            break
+        }
+    }
+}
+
 //defines functions that update the amount of cookie upgrades you have and the price of future cookie upgrades in shop.html
-function updateCookieUpgradePrice () {
+function updateCookieUpgradePrice() {
     if (cookieUpgradePrice) cookieUpgradePrice.textContent = `Price: ${cookieUpgradeBuyPrice} cookies`;
 }
-function updateCookieUpgrades () {
+function updateCookieUpgrades() {
     if (cookieUpgrades) cookieUpgrades.textContent = `You have ${cookieUpgradeAmount} cookie upgrades`;
 }
 
@@ -58,10 +74,26 @@ function cookie_button() {
         updateShopSite();
     }
 }
+function cookieMaxButton() {
+    while (true) {
+        if (count >= cookieUpgradeBuyPrice) {
+            count -= cookieUpgradeBuyPrice;
+            cookieUpgradeAmount ++;
+        } else {
+            updateCookieUpgradePrice();
+            updateCookieUpgrades();
+            updateShopSite();
+            break
+        }
+    }
+}
 
 //adds an eventListener that activates every time the Buy button is clicked
 grandpaButton.addEventListener('click', grandpa_button);
+grandpaMaxDisplayButton.addEventListener('click', grandpaMaxButton);
 cookieButton.addEventListener('click', cookie_button);
+cookieMaxDisplayButton.addEventListener('click', cookieMaxButton);
+
 
 updateGrandpaPrice();
 updateGrandpas();

@@ -21,3 +21,12 @@ nav {
     height: 300px;
     align-items: center;
 }
+
+#page {
+    text-align: center;
+    font-size: 40px;
+}
+
+.clickableButtons {
+    font-size: 20px;
+}

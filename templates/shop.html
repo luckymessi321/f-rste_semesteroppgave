@@ -1,21 +1,24 @@
 {% extends "base.html" %}
-
+{% block title %} Shop {% endblock %}
+{% block page %} Shop {% endblock %}
 {% block script %} src="../static/java/shop.js" {% endblock %}
 
 {% block content %}
  <div class="grandpa">
-    <h3 id="title">Grandpa</h3>
-    <p id="description">Grandpa that bakes cookies. +1 cookie per second</p>
+    <h3 id="itemTitle">Grandpa</h3>
+    <p id="description">Grandpa that bakes cookies. +1 cookie per second. Grandpa effectiveness doubles every 25 purchases</p>
     <p id="grandpaPrice"></p>
     <p id="grandpas"></p>
     <p id="grandpaButton">Buy</p>
+    <p id="grandpaMaxButton">Buy Max<p>
  </div>
 
  <div class="better cookies">
-   <h3 id="title">Better Cookies</h3>
+   <h3 id="itemTitle">Better Cookies</h3>
    <p id="description">Higher quality cookies. +1 cookie per click</p>
    <p id="cookieUpgradePrice"></p>
    <p id="cookieUpgrades"></p>
    <p id="cookieUpgradeButton">Buy</p>
+   <p id="cookieMaxButton">Buy Max</p>
  </div>
 {% endblock %}
