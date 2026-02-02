@@ -29,4 +29,17 @@ nav {
 
 .clickableButtons {
     font-size: 20px;
+    border: 1px;
+    width: fit-content;
+    background-color: lightgreen;
+    border-style: solid;
+}
+
+.centeredClickableButtons {
+    font-size: 20px;
+    border: 1px;
+    background-color: lightgreen;
+    border-style: solid;
+    text-align: center;
+    
 }
