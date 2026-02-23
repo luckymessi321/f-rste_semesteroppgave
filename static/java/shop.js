@@ -14,15 +14,8 @@ let grandpaBuyPrice = grandpaAmount * 5 + 5;
 
 // defines a function that refreshes the shop site once and updates the url parameters
 function updateShopSite() {
-    let timesExecuted = 0
-    while (true) {
-        window.location.href = '/shop?count=' + count + '&grandpas=' + grandpaAmount + '&cookieUpgrades=' + cookieUpgradeAmount + '&rebirthAmount=' + rebirthAmount;
-        console.log('site updated');
-        timesExecuted ++;
-        if (timesExecuted >= timesExecuted) {
-            break
-        }
-    }
+    window.location.href = '/shop?count=' + count + '&grandpas=' + grandpaAmount + '&cookieUpgrades=' + cookieUpgradeAmount + '&rebirthAmount=' + rebirthAmount;
+    console.log('site updated');
 }
 
 //defines functions that update the amount of grandpas you have and the price of future grandpas in shop.html
